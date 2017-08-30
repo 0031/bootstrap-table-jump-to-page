@@ -1,0 +1,20 @@
+{
+  "name": "bootstrap-table-jump-to-page",
+  "description": "The bootstrap-table paging plug-in extension jumps to the specified page number.",
+  "main": ["./src/","./dist/"],
+  "authors": [
+    "0031"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "bootstrap-table bootstrap-table-jump-to-page"
+  ],
+  "homepage": "https://github.com/0031/bootstrap-table-jump-to-page#readme",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
