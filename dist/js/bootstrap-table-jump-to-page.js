@@ -14,7 +14,7 @@
     // 继承bootstrapTable.defaults/icons/locales参数
     $.extend($.fn.bootstrapTable.defaults, defaults);
     $.extend($.fn.bootstrapTable.locales, {
-        formatJumpTo: function (pageNumber) {
+        formatJumpToPage: function (pageNumber) {
             return '跳转到第' + pageNumber + '页';
         }
     });
@@ -41,7 +41,7 @@
             if (!$jumpTo.length) {
                 $jumpTo = $([
                     '<span class="pagination-jump-to" style="margin: 0 5px">',
-                    this.options.formatJumpTo('<input type="text" class="form-control" style="width: 60px;height:30px;display:inline-block;"/>'),
+                    this.options.formatJumpToPage('<input type="text" class="form-control" style="width: 60px;height:30px;display:inline-block;"/>'),
                     '</span>'].join('')).appendTo($paginationDetail);
 
                 var error = function (msg) {
@@ -76,7 +76,7 @@
                 // 输入框值发生改变
                 $jumpTo.find('input').on('keydown', function (e) {
                     // 阻止事件继续冒泡
-                    e.stopPropagation();
+                    e.stopImmediatePropagation();
                     if (e.keyCode == 13) {
                         // 触发blur，失去焦点，自动触发change
                         $(this).trigger('blur');
